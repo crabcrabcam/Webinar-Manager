@@ -9,9 +9,9 @@ namespace Classes
     public class Program
     {
 
-        public static List<Course> listOfCourses;
-        public static List<Student> listOfStudents;
-        public static List<Trainer> listOfTrainers;
+        public static List<Course> listOfCourses = new List<Course>();
+        public static List<Student> listOfStudents = new List<Student>();
+        public static List<Trainer> listOfTrainers = new List<Trainer>();
 
         static void Main(string[] args)
         {
