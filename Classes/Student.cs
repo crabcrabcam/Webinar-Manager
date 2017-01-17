@@ -6,26 +6,17 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    public class Person
+    public class Student : Person
     {
-        public string name;
-        public int age;
-        public string email;
-
-        public Person(string name, int age, string email)
+        public Student(string name, int age, string email, string course) : base(name, age, email)
         {
             this.name = name;
             this.age = age;
-            if (email == "")
-            {
-                this.email = "nil";
-            }
-            else
-            {
-                this.email = email;
-            }
-            
+            this.email = email;
+            this.course = course;
         }
+
+        public string course;
 
         /// <summary>
         /// Return string of information rather than breaking
@@ -34,5 +25,6 @@ namespace Classes
         {
             return String.Format("Name: {0}, Email: {1}, Age: {2}", name, email, age);
         }
+
     }
 }
