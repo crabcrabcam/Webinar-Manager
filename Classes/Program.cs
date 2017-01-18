@@ -23,6 +23,9 @@ namespace Classes
             "3: Add a course",
             "4: Test Int",
             "5: Test DateTime",
+            "6: GET ME SOME LEARNERS",
+            "7: List students",
+            "8: Pick a student",
             "Q: Quit"
         };
 
@@ -59,6 +62,15 @@ namespace Classes
                     case '5':
                         testDateTime();
                         break;
+                    case '6':
+                        makeLearners();
+                        break;
+                    case '7':
+                        listStudents();
+                        break;
+                    case '8':
+                        pickStudent();
+                        break;
                     case 'Q':
                     case 'q':
                         Environment.Exit(0);
@@ -68,6 +80,48 @@ namespace Classes
                 }
 
             }
+        }
+
+        static void pickStudent()
+        {
+            while (true)
+            {
+                Console.WriteLine("Who would you like to know more about?");
+                listStudents();
+                int number = Input.GetInt("Please pick a number!");
+                if (number < 0 || number > listOfStudents.Count)
+                {
+                    Console.WriteLine("Please pick a valid number");
+                    continue;
+                } else
+                {
+                    Console.WriteLine(listOfStudents[number].ToString());
+                    break;
+                }
+
+            }
+        }
+
+        static void listStudents()
+        {
+            int i = 0;
+            foreach (var student in listOfStudents)
+            {
+                Console.WriteLine(i + ": " + student.name);
+                i++;
+            }
+        }
+
+        static void makeLearners()
+        {
+            Student s1 = new Student("Cameron", 3, "cam12win@gmail.com", "C#");
+            Student s2 = new Student("Cameron2", 3, "cam12win@gmail.com", "C#");
+            Student s3 = new Student("Cameron3", 3, "cam12win@gmail.com", "C#");
+            Student s4 = new Student("Cameron4", 3, "cam12win@gmail.com", "C#");
+            listOfStudents.Add(s1);
+            listOfStudents.Add(s2);
+            listOfStudents.Add(s3);
+            listOfStudents.Add(s4);
         }
 
         static void testDateTime()

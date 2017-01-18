@@ -23,7 +23,7 @@ namespace Classes
         /// </summary>
         public override string ToString()
         {
-            return String.Format("Name: {0}, Email: {1}, Age: {2}", name, email, age);
+            return String.Format("Name: {0}, Email: {1}, Age: {2}, Course: {3}", name, email, age, course);
         }
 
     }
