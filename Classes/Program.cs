@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+
 namespace Classes
 {
     public class Program
@@ -13,22 +16,29 @@ namespace Classes
         public static List<Student> listOfStudents = new List<Student>();
         public static List<Trainer> listOfTrainers = new List<Trainer>();
 
+        static string[] menuOptions =
+        {
+            "1: Add a student",
+            "2: Add a trainer",
+            "3: Add a course",
+            "4: Test Int",
+            "5: Test DateTime",
+            "Q: Quit"
+        };
+
         static void Main(string[] args)
         {
-            
-            bool quit = false;
 
             Console.WriteLine("Hello");
 
-            while (!quit)
+            while (true)
             {
                 Console.WriteLine("What do you want to do?");
-                Console.WriteLine("1: Add a student");
-                Console.WriteLine("2: Add a teacher");
-                Console.WriteLine("3: Add a course");
-                Console.WriteLine("4: Test Int");
-                Console.WriteLine("5: Try DateTime");
-                Console.WriteLine("Q: Quit");
+
+                foreach (string menuOption in menuOptions)
+                {
+                    Console.WriteLine(menuOption);
+                }
 
                 char option = Console.ReadKey().KeyChar;
 
