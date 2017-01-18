@@ -26,6 +26,8 @@ namespace Classes
                 Console.WriteLine("1: Add a student");
                 Console.WriteLine("2: Add a teacher");
                 Console.WriteLine("3: Add a course");
+                Console.WriteLine("4: Test Int");
+                Console.WriteLine("5: Try DateTime");
                 Console.WriteLine("Q: Quit");
 
                 char option = Console.ReadKey().KeyChar;
@@ -41,11 +43,31 @@ namespace Classes
                     case '3':
                         addCourse();
                         break;
+                    case '4':
+                        testInt();
+                        break;
+                    case '5':
+                        testDateTime();
+                        break;
+                    case 'Q':
+                    case 'q':
+                        Environment.Exit(0);
+                        break;
                     default:
                         continue;
                 }
 
             }
+        }
+
+        static void testDateTime()
+        {
+            Input.getDateTime("Please enter a date");
+        }
+
+        static void testInt()
+        {
+            Input.GetInt("Please enter a number");
         }
 
         static void addCourse()
